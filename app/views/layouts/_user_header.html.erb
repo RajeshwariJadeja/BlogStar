@@ -1,14 +1,17 @@
 
 <ul class="nav pull-right">
 <% if user_signed_in? %>
-  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete ,:class => "btn btn-primary"%></li>
-  <li><%= link_to "Users",users_path,:class => "btn btn-primary" %></li>
-
+<div>
+  <div style="float: left "> 
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete ,:class => "btn btn-primary"%></div>
+  <div style="float: right ">
+  <%= link_to "Users",users_path,:class => "btn btn-primary" %></div>
+</div>
   <% else %>
   <div>
-  <div style="float: left; "> 
+  <div style="float: left "> 
   <%= link_to "Sign in", "#my-modal",:class => "btn btn-primary", "data-toggle" => "modal"%></div>
-  <div style="float: right; ">
+  <div style="float: right ">
   <%= link_to "Sign up", "#my-modal1",:class => "btn btn-primary", "data-toggle" => "modal"%>
   </div>
     <div>
@@ -22,19 +25,29 @@
   <div class="modal-body">
     <div class="border-form-div">
       
-      <%= form_for(resource, :validate => true,:as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
       <%= devise_error_messages! %>
-      <div class="controls">
+      <div id="errors">
+       
+      </div>
+
+
+     
      
       <%= f.text_field :login ,autofocus: true,placeholder: 'Username Or Email_id'%><br>
+      
+      
       <%= f.password_field :password, :placeholder => 'Password' %>
       <br>
+      
       <% if devise_mapping.rememberable? %>
 
       <%= f.check_box :remember_me,:class => "css_class" %><%= f.label :remember_me %>  
       <% end %>
+      
       <%= f.submit "Sign in",:class => "btn btn-success" %>
+      
       <% end %>
       <div class="container">
         
@@ -44,24 +57,18 @@
   <div class="modal-footer">
 
    <div>
-  <div style="float: left ">
-    <div style="float: left "> <%= button_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter),:class => "btn btn-primary"%> </div>
-  <div style="float: right "> <%= button_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2),
-   :class => "btn btn-primary"%></div>
-  </div>
-  <div style="float: right ">
-  <div style="float: left "><%= button_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook),
-   :class => "btn btn-primary"%> </div>
-  <div style="float: right "> <button aria-hidden="true" class="btn btn-danger" data-dismiss="modal">Close</button></div>
-    
-  </div>
-  </div>
- 
-    
-  
-  
-  
-  
+    <div style="float: left ">
+    <%= button_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter),:class => "btn btn-primary"%> 
+       <%= button_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2),
+       :class => "btn btn-primary"%>
+     </div>
+     <div style="float: right ">
+    <%= button_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook),
+       :class => "btn btn-primary"%> 
+        <button aria-hidden="true" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+     </div>
+   </div>
  </div>
 </div>
 </div>
@@ -100,12 +107,19 @@
     </div>
   </div>
   <div class="modal-footer">
+    <div>
+    <div style="float: left ">
     <%= button_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter),:class => "btn btn-primary"%> 
-   <%= button_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2),
-   :class => "btn btn-primary"%>
-   <%= button_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook),
-   :class => "btn btn-primary"%> 
-   <button aria-hidden="true" class="btn btn-danger" data-dismiss="modal">Close</button>
+       <%= button_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2),
+       :class => "btn btn-primary"%>
+     </div>
+     <div style="float: right ">
+    <%= button_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook),
+       :class => "btn btn-primary"%> 
+        <button aria-hidden="true" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+     </div>
+   </div>
  </div>
 </div>
 </div>

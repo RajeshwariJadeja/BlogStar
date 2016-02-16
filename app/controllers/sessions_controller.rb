@@ -9,8 +9,5 @@ class SessionsController < Devise::SessionsController
   #   session[:user_id] = nil
   #   redirect_to root_path
   # end
-   respond_to :html, :js
-   
-
- 
+  
 end
