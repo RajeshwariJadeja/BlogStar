@@ -34,4 +34,15 @@ BlogStar::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #setting default url
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener
+    
+  Paperclip.options[:command_path] = "/usr/bin/convert"
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => 'miipl'
+   }
 end

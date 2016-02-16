@@ -1,0 +1,17 @@
+
+
+<% if user_signed_in? %>
+<div class="border-form-div" align= "center">
+
+<center><%= image_tag current_user.image.url %></center>
+<h1> <%= current_user.user_name %> </h1>
+
+
+  <h4> Email_id:   <%= current_user.email %></h4>
+  <h4> First_Name:    <%= current_user.first_name %></h4>
+  <h4> Last_Name:    <%= current_user.last_name %></h4>
+  <center> <%= link_to "Edit Profile", edit_user_registration_path,:class => "btn btn-success" %></center>
+
+  
+ </div>
+<% end %>

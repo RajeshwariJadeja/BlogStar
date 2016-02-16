@@ -1,0 +1,16 @@
+<h1><%= @user.user_name %></h1>
+<div class="border-form-div" align= "center">
+
+<center><%= image_tag @user.image.url %></center>
+<h1> <%= @user.user_name %> </h1>
+
+
+  <h4> Email_id:   <%= @user.email %></h4>
+  <h4> First_Name:    <%= @user.first_name %></h4>
+  <h4> Last_Name:    <%=@user.last_name %></h4>
+
+  <% if @user.id == current_user.id%>
+  <center> <%= link_to "Edit Profile", edit_user_registration_path,:class => "btn btn-success" %></center>
+  <% end %>
+ </div>
+

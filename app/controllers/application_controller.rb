@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  def home
-  	redirect_to home
-  end
+
+  protect_from_forgery 
+   skip_before_filter  :verify_authenticity_token
+  
+
+ 
+
+
+  protected
+
+
+  
 end

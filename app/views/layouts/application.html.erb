@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogStar</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<title>BlogStar</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+ 
 </head>
 <body>
 
-<%= yield %>
+	<div class="container-narrow">
+  <div class="masthead">
+ <h3> 
+ <%= link_to "BlogStar", root_path %>
+ <%= render 'layouts/user_header' %>
+    </h3>
+   
+   
+    
+    
+  </div>
+  <hr />
+  <div class="container">
+    <%= render 'layouts/message' %>
+    <%= yield %>
+ 
+</div>
 
+	
 </body>
 </html>

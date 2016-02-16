@@ -7,8 +7,17 @@ gem 'rails', '3.2.0'
 
 gem 'sqlite3'
 gem 'bootstrap-sass', '2.3.2'
-
-
+gem 'devise'
+gem 'factory_girl_rails'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth-facebook', '~> 3.0'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem "paperclip", "~> 4.2"
+gem 'pry-rails', :group => :development
+gem 'aws-sdk-v1'
+gem "letter_opener", :group => :development
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

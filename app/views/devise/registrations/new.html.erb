@@ -1,0 +1,25 @@
+
+
+<div class="border-form-div">
+  <h2>Sign up</h2>
+  <%= form_for(resource, :as => resource_name,:html => { :multipart => true },:url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+   <%= f.file_field :image %>
+  
+  
+
+  <%= f.text_field :user_name, autofocus: true,placeholder: 'User Name' %><br>
+  <%= f.email_field :email, :placeholder => 'Email address' %><br>
+  <% if f.object.password_required? %>
+    <%= f.text_field :first_name, placeholder: 'First Name' %><br>
+    <%= f.text_field :last_name,placeholder: 'Last Name' %><br>
+    
+    
+    
+    <%= f.password_field :password, :placeholder => 'Password' %><br>
+    <%= f.password_field :password_confirmation, :placeholder => 'Password confirmation' %><br>
+  <% end %>
+  <%= f.submit "Sign up",:class=>'btn btn-primary' %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
